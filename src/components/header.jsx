@@ -8,7 +8,7 @@ import redCardImg from '../static/img/getapp/a16f7dda-储值.jpg';
 export const Header = (props) => {
   return (
        <div className='wrapper'>
-        <section className = 'first'>
+        <section id = "first" className = 'first'>
                 <img src={mainImg} alt=""/>
                 <div className="head">
                             <div className="download">

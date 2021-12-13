@@ -4,7 +4,7 @@ import bahaImg from '../static/img/background/baha.295d9.png'
 export const Features = (props) => {
   return (
     <div className='wrapper'>
-      <section className="second">
+      <section id="second" className="second">
        <img  src={connectImg}  alt=""/>
                 <div className="news-btns">
                     <a href="https://www.facebook.com/WYLSG" target="_blank" rel="noreferrer">

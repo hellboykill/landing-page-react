@@ -3,9 +3,9 @@ import heroImg from '../static/img/background/hero.jpg';
 export const Heros = (props) => {
     return(
       <div className='wrapper'>
-           <section className="three">
+           <section id="three" className="three">
         <img  src={heroImg}  alt=""/>
-                <div class="icons">
+                <div className="icons">
                 </div>
                 <div className="gifs"> 
                         <img

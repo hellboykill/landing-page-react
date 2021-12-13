@@ -13,12 +13,12 @@ const styles = {
 export const DemoCard = (props) => {
       return (
        <div className='wrapper'>
-            <section className="five">
+            <section id="five" className="five">
                  <img src={cardImg} alt=""/>
                 <div className="features">
                  {/* style = {transform:translate3d(0,0,0);transition-duration:0s} */}
                     <div className="swiper-container features-top swiper-container-horizontal">
-                        <div className="swiper-wrapper" style={defaultStyle}>
+                        <div className="swiper-wrapper" style={styles}>
                             <div className="swiper-slide">
                                     <img
                                     src="../static/img/demo/337020289-62ca-45c9-981f-b9590a7bd36c_1242x2208-1.jpg"
