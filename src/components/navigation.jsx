@@ -7,17 +7,33 @@ import page2Selected from '../static/img/navbar/page2_selected.png';
 import page3Selected from '../static/img/navbar/page3_selected.png';
 import page4Selected from '../static/img/navbar/page4_selected.png';
 import page5Selected from '../static/img/navbar/page5_selected.png';
-
-import {useState,useRef} from 'react';
-
+import clsx from 'clsx';
+import {useState, useEffect} from 'react';
 //const scrollToRef = (ref) => window.scrollTo({ top: 0, behavior: 'smooth' })
 
 export const Navigation = (props) => {
+
+        const [active, setActive] = useState("active")
+        const listenScrollEvent = (event) => {
+                if (window.scrollY > 400) {
+                  return setActive("active")
+                } else  {
+                  return setActive("")
+                } 
+              }
+        const currentURL = window.location.hash;
+        const checkActive = (path) => currentURL === path;
+        console.log(currentURL);
+        useEffect(() => {
+        window.addEventListener('scroll', listenScrollEvent);  
+        return () =>
+          window.removeEventListener('scroll', listenScrollEvent);
+      }, []);
         return(
-                <header>
-                <div className="header page-scroll" >
+                <header >
+                <div className="'header page-scroll">
                 <ul className="nav">
-                        <li className="page-scroll">
+                        <li className={clsx('page-scroll', checkActive('#first') ? 'active': '')}>
                                 <a href="#first">
                                         <img
                                         src={page1Select}
@@ -27,7 +43,7 @@ export const Navigation = (props) => {
                                         alt=""/>
                                 </a>       
                         </li>
-                        <li className="page-scroll">
+                        <li  className={clsx('page-scroll', checkActive('#second') ? 'active': '')}>
                                 <a href="#second">
                                         <img
                                         src={page2Select}
@@ -37,7 +53,7 @@ export const Navigation = (props) => {
                                         alt=""/>
                                 </a>
                         </li>
-                        <li className="page-scroll">
+                        <li className={clsx('page-scroll', checkActive('#three') ? 'active': '')}>
                                 <a href="#three">
                                         <img
                                         src={page3Select}
@@ -47,7 +63,7 @@ export const Navigation = (props) => {
                                         alt=""/>
                                 </a>
                         </li>
-                        <li className="page-scroll">
+                        <li className={clsx('page-scroll', checkActive('#four') ? 'active': '')}>
                                 <a href="#four">
                                         <img
                                         src={page4Select}
@@ -57,7 +73,7 @@ export const Navigation = (props) => {
                                         alt=""/>
                                 </a>
                         </li>
-                        <li className="active page-scroll">
+                        <li  className={clsx('page-scroll', checkActive('#five') ? 'active': '')}>
                                 <a href="#five">
                                         <img
                                         src=""

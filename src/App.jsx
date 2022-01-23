@@ -18,13 +18,15 @@ const App = () => {
     const [landingPageData, setLandingPageData] = useState({});
     return (
       <div>
-            <Navigation/>
-            <Header data={landingPageData.Header} />
-            <Features data={landingPageData.Features} />
-            <Heros data={landingPageData.Heros} />
-            <IntroVideo data={landingPageData.IntroVideo} />
-            <DemoCard data={landingPageData.DemoCard} />
-            <Contact data={landingPageData.contact} />
+            <Navigation/>  
+            <div className="wrapper">
+                  <Header data={landingPageData.Header} />
+                  <Features data={landingPageData.Features} />
+                  <Heros data={landingPageData.Heros} />
+                  <IntroVideo data={landingPageData.IntroVideo} />
+                  <DemoCard data={landingPageData.DemoCard} />          
+            </div>
+          <Contact data={landingPageData.contact} />
       </div>
     )
 }

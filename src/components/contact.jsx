@@ -1,6 +1,5 @@
 export const Contact = (props) => { 
     return (
-       <div className='wrapper'>
        <footer>
             <div className="logo"></div>
             <div className="text">
@@ -30,6 +29,5 @@ export const Contact = (props) => {
             </div>
             <div className="email-box"> toudacompany@gmail.com </div>
         </footer>
-        </div>
 )
 }

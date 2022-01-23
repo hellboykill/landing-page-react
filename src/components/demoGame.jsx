@@ -12,7 +12,6 @@ const styles = {
 
 export const DemoCard = (props) => {
       return (
-       <div className='wrapper'>
             <section id="five" className="five">
                  <img src={cardImg} alt=""/>
                 <div className="features">
@@ -63,6 +62,5 @@ export const DemoCard = (props) => {
                             alt=""/></div>
                 </div>
             </section>
-        </div>
     )
 }

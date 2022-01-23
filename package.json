@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
+    "clsx": "^1.1.1",
+    "react-router-dom": "^6.2.1",
     "react-transition-group": "^4.4.2",
     "smooth-scroll": "^16.1.3"
   }

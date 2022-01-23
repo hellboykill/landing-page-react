@@ -3,7 +3,6 @@ import bahaImg from '../static/img/background/baha.295d9.png'
 
 export const Features = (props) => {
   return (
-    <div className='wrapper'>
       <section id="second" className="second">
        <img  src={connectImg}  alt=""/>
                 <div className="news-btns">
@@ -21,6 +20,5 @@ export const Features = (props) => {
                     </div>
                 </div>
             </section>
-    </div>
   )
 }

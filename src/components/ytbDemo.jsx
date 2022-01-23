@@ -2,7 +2,6 @@ import videoIntroImg from '../static/img/background/youtube.jpg';
 
 export const IntroVideo = (props) => {
       return (
-       <div className='wrapper'>
             <section id="four" className="four">
                 <img src={videoIntroImg} alt=""/>
                 <iframe
@@ -14,6 +13,5 @@ export const IntroVideo = (props) => {
                         allowFullScreen>
                 </iframe>
             </section>
-        </div>
     )
 }
