@@ -13,13 +13,37 @@ import {useState, useEffect} from 'react';
 
 export const Navigation = (props) => {
 
-        const [active, setActive] = useState("active")
+        const [page1Active, setPage1Active] = useState("active")
+        const [page2Active, setPage2Active] = useState("")
+        const [page3Active, setPage3Active] = useState("")
+        const [page4Active, setPage4Active] = useState("")
+        const [page5Active, setPage5Active] = useState("")
+
         const listenScrollEvent = (event) => {
-                if (window.scrollY > 400) {
-                  return setActive("active")
-                } else  {
-                  return setActive("")
-                } 
+                let offSetY = window.pageYOffset;
+                if(offSetY < 496) {
+                        setPage1Active("active");
+                        setPage2Active("");
+                }
+                else if(offSetY >= 496 && offSetY < 1100) {
+                        setPage1Active("");
+                        setPage2Active("active");
+                        setPage3Active("");
+                }
+                else if(offSetY >= 1100 && offSetY < 1672 ) {
+                        setPage2Active("");
+                        setPage3Active("active");
+                        setPage4Active("");
+                }
+                else if(offSetY >= 1672 && offSetY < 2180 ) {
+                        setPage3Active("");
+                        setPage4Active("active");
+                        setPage5Active("");
+                }
+                else if(offSetY >= 2180) {
+                        setPage4Active("");
+                        setPage5Active("active");
+                }
               }
         const currentURL = window.location.hash;
         const checkActive = (path) => currentURL === path;
@@ -33,7 +57,7 @@ export const Navigation = (props) => {
                 <header >
                 <div className="'header page-scroll">
                 <ul className="nav">
-                        <li className={clsx('page-scroll', checkActive('#first') ? 'active': '')}>
+                        <li className={clsx('page-scroll', page1Active)}>
                                 <a href="#first">
                                         <img
                                         src={page1Select}
@@ -43,7 +67,7 @@ export const Navigation = (props) => {
                                         alt=""/>
                                 </a>       
                         </li>
-                        <li  className={clsx('page-scroll', checkActive('#second') ? 'active': '')}>
+                        <li  className={clsx('page-scroll', page2Active)}>
                                 <a href="#second">
                                         <img
                                         src={page2Select}
@@ -53,7 +77,7 @@ export const Navigation = (props) => {
                                         alt=""/>
                                 </a>
                         </li>
-                        <li className={clsx('page-scroll', checkActive('#three') ? 'active': '')}>
+                        <li className={clsx('page-scroll', page3Active)}>
                                 <a href="#three">
                                         <img
                                         src={page3Select}
@@ -63,7 +87,7 @@ export const Navigation = (props) => {
                                         alt=""/>
                                 </a>
                         </li>
-                        <li className={clsx('page-scroll', checkActive('#four') ? 'active': '')}>
+                        <li className={clsx('page-scroll', page4Active)}>
                                 <a href="#four">
                                         <img
                                         src={page4Select}
@@ -73,7 +97,7 @@ export const Navigation = (props) => {
                                         alt=""/>
                                 </a>
                         </li>
-                        <li  className={clsx('page-scroll', checkActive('#five') ? 'active': '')}>
+                        <li  className={clsx('page-scroll',  page5Active)}>
                                 <a href="#five">
                                         <img
                                         src=""
